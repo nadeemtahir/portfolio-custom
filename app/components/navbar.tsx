@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -21,7 +21,7 @@ function Navbar() {
                     <div className='logo'>Manahil Nadeem</div>
 
                     {/* Desktop Links */}
-                    <div className={`navLinks ${isMenuOpen ? 'open' : ''}`}>
+                    <div className='navLinks'>
                         <Link href="/" className='link'>Home</Link>
                         <Link href="/about" className='link'>About</Link>
                         <Link href="/portfolio" className='link'>Portfolio</Link>
@@ -40,22 +40,21 @@ function Navbar() {
                 </div>
 
                 {/* Mobile Menu */}
-                {isMenuOpen && (
-                    <div className='mobileMenu'>
-                        <Link href="/" className='mobileLink' onClick={toggleMenu}>Home</Link>
-                        <Link href="/about" className='mobileLink' onClick={toggleMenu}>About</Link>
-                        <Link href="/portfolio" className='mobileLink' onClick={toggleMenu}>Portfolio</Link>
-                        <Link href="/skills" className='mobileLink' onClick={toggleMenu}>Skills</Link>
-                        <Link href="/contact" className='mobileLink' onClick={toggleMenu}>Contact</Link>
-                        <Link href="#" className='mobileDownloadButton' onClick={toggleMenu}>
-                            Download CV
-                            <MdFileDownload className='icon' />
-                        </Link>
-                    </div>
-                )}
+                <div className={`mobileMenu ${isMenuOpen ? 'open' : ''}`}>
+                    <Link href="/" className='mobileLink' onClick={toggleMenu}>Home</Link>
+                    <Link href="/about" className='mobileLink' onClick={toggleMenu}>About</Link>
+                    <Link href="/portfolio" className='mobileLink' onClick={toggleMenu}>Portfolio</Link>
+                    <Link href="/skills" className='mobileLink' onClick={toggleMenu}>Skills</Link>
+                    <Link href="/contact" className='mobileLink' onClick={toggleMenu}>Contact</Link>
+                    <Link href="#" className='mobileDownloadButton' onClick={toggleMenu}>
+                        Download CV
+                        <MdFileDownload className='icon' />
+                    </Link>
+                </div>
             </nav>
         </header>
     );
 }
 
 export default Navbar;
+
